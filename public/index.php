@@ -34,10 +34,15 @@
             </ul>
         </nav>
         <ul class="social-links">
-            <li><a href="https://www.linkedin.com/in/milan-carati-520953225/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
-            <li><a href="https://www.instagram.com/milancarati?igsh=aTdrOHNqc3N6YmJ4&utm_source=qr" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href="mailto:milan.carati@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a></li>
-            <li><a href="https://github.com/milan-c-37277" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></li>
+            <li><a target="_blank" href="https://www.linkedin.com/in/milan-carati-520953225/" aria-label="LinkedIn"><i
+                        class="fa-brands fa-linkedin"></i></a></li>
+            <li><a target="_blank" href="https://www.instagram.com/milancarati?igsh=aTdrOHNqc3N6YmJ4&utm_source=qr"
+                    aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a target="_blank" href="mailto:milan.carati@gmail.com" aria-label="Email"><i
+                        class="fa-solid fa-envelope"></i></a></li>
+            <li><a target="_blank" href="https://github.com/milan-c-37277" aria-label="GitHub"><i
+                        class="fa-brands fa-github"></i></a>
+            </li>
         </ul>
     </aside>
 
@@ -78,6 +83,7 @@
                         <span>CSS</span>
                         <span>JavaScript</span>
                         <span>PHP</span>
+                        <span>Animation</span>
                     </div>
                     <div class="project-links">
                         <a target="_blank" href="https://github.com/coo1boy2169/Web-Sweden">GitHub</a>
@@ -91,8 +97,8 @@
                     <p>A professional association website focused on community building and modern web standards.
                         Optimized for all devices.</p>
                     <div class="tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
                     </div>
                     <div class="project-links">
                         <a target="_blank" href="https://37277.hosts2.ma-cloud.nl/svunity/">Live Demo</a>
@@ -101,7 +107,7 @@
 
                 <div class="project-card">
                     <img src="./assets/img/blastingweb.png" alt="Blasting Galaxy" />
-                    <h3>Blasting Galaxy</h3>
+                    <h3>Blast Galaxy</h3>
                     <p>A client project for an interactive website, developed in collaboration with <a class="smalllink"
                             target="_blank" href="https://37277.hosts2.ma-cloud.nl/blasting-galaxy/">Blasting
                             Galaxy</a>.</p>
@@ -116,14 +122,49 @@
                         <a target="_blank" href="https://37277.hosts2.ma-cloud.nl/blasting-galaxy/">Live Demo</a>
                     </div>
                 </div>
+
+                <div class="project-card">
+                    <img src="./assets/img/nxt.png" alt="Blasting Galaxy" />
+                    <h3>NXT Museum</h3>
+                    <p>A client project for an interactive website, developed in collaboration with <a class="smalllink"
+                            target="_blank" href="https://nxtmuseum.com/">NXT Museum</a>.</p>
+                    <div class="tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Animation</span>
+                    </div>
+                    <div class="project-links">
+                        <a target="_blank" href="https://github.com/milan-c-37277/Eindopdracht-periode-2">GitHub</a>
+                        <a target="_blank" href="https://37277.hosts2.ma-cloud.nl/eindopdracht-p2">Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25617319/flappy_bird_new.png?quality=90&strip=all&crop=0%2C30.334004392387%2C100%2C37.408491947291&w=2400"
+                        alt="Flappy Bird" />
+                    <h3>Flappy Bird</h3>
+                    <p>A classic arcade game where players control a bird by moving a object infront of a distance
+                        meter.</p>
+                    <div class="tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Animation</span>
+                    </div>
+                    <div class="project-links">
+                        <a target="_blank" href="https://github.com/SaadSaedd/M6BO">GitHub</a>
+                        <a target="_blank" href="./assets/img/flappybird.mp4">Live Demo</a>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="skills" class="fade-in">
             <h2>Technical Skills</h2>
             <div class="tags">
-                <span>HTML5</span>
-                <span>CSS3</span>
+                <span>HTML</span>
+                <span>CSS</span>
                 <span>JavaScript</span>
                 <span>PHP</span>
                 <span>MySQL</span>
@@ -155,7 +196,7 @@
                     <span>High School</span>
                     <p>
                         High school education with a focus on media, technology, and creative subjects.
-                        During this time, I discovered my passion for programming. I also learendt to work in teams
+                        During this time, I discovered my passion for programming. I also learned to work in teams
                         and developed problem-solving skills.
                     </p>
                 </div>
@@ -178,7 +219,7 @@
             <p>Ready to work together? Send me a message or email me directly at <a
                     href="mailto:milan.carati@gmail.com">milan.carati@gmail.com</a></p>
 
-            <form action="#" method="POST" class="contact-form">
+            <form action="sendmail.php" method="POST" class="contact-form">
                 <input type="text" name="name" placeholder="Your Name" required />
                 <input type="email" name="email" placeholder="Email Address" required />
                 <textarea name="message" placeholder="Tell me about your project or ask a question..." rows="6"
@@ -189,5 +230,11 @@
     </main>
     <script src="app.js"></script>
 </body>
-
 </html>
+<?php
+session_start();
+if (isset($_SESSION['success_message'])) {
+    echo "<div class='alert alert-success'>" . $_SESSION['success_message'] . "</div>";
+    unset($_SESSION['success_message']); // maar 1x tonen
+}
+?>
